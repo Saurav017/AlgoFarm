@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+
+    <title>AlgoFarm</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div>
+          <h1 class="logo">Algo<span>Farm</span>
+          </h1>
+      </div>
+      <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/frontend/crop.html">Crop</a></li>
+          <li><a href="/frontend/fertiliser.html">Fertiliser</a></li>
+          <li><a href="/frontend/disease.html">Disease</a></li>
+          <li><a href="/frontend/blog.html">Blog</a></li>
+          
+      </ul>
+
+  </nav>
+    <!-- form section -->
+    <section class="container">
+      <form class="form_container">
+        <div class="input_container">
+          <label for="name">Nitrogen</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter the value"
+          />
+        </div>
+
+        <div class="input_container">
+          <label for="name">Phosphorus</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter the value"
+          />
+        </div>
+
+        <div class="input_container">
+          <label for="name">Potassium</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter the value"
+          />
+        </div>
+
+        
+
+        <!-- states -->
+        <div class="input_container">
+          <label for="name">Crop you want to grow</label>
+          <select name="crop" id="crop" class="form-control">
+            <option selected>Select crop</option>
+            <option>rice</option>
+            <option>maize</option>
+            <option>chickpea</option>
+            <option>kidneybeans</option>
+            <option>pigeonpeas</option>
+            <option>mothbeans</option>
+            <option>mungbean</option>
+            <option>blackgram</option>
+            <option>lentil</option>
+            <option>pomegranate</option>
+            <option>banana</option>
+            <option>mango</option>
+            <option>grapes</option>
+            <option>watermelon</option>
+            <option>muskmelon</option>
+            <option>apple</option>
+            <option>orange</option>
+            <option>papaya</option>
+            <option>coconut</option>
+            <option>cotton</option>
+            <option>jute</option>
+            <option>coffee</option>
+          </select>
+        </div>
+
+        <div class="input_container">
+          <button type="submit" class="btn">Predict</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
