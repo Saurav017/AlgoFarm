@@ -36,40 +36,25 @@
   </nav>
     <!-- form section -->
     <section class="container">
-      <form class="form_container">
+      <form class="form_container" id="fertiliser-form">
         <div class="input_container">
-          <label for="name">Nitrogen</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter the value"
-          />
-        </div>
+          <label for="nitrogen">Nitrogen</label>
+          <input type="text" name="nitrogen" id="nitrogen" placeholder="Enter the value">
+      </div>
 
-        <div class="input_container">
-          <label for="name">Phosphorus</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter the value"
-          />
-        </div>
+      <div class="input_container">
+          <label for="phodphorus">Phosphorus</label>
+          <input type="text" name="phosphorus" id="phosphorus" placeholder="Enter the value">
+      </div>
 
-        <div class="input_container">
-          <label for="name">Potassium</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter the value"
-          />
-        </div>
+      <div class="input_container">
+          <label for="potassium">Potassium</label>
+          <input type="text" name="potassium" id="potassium" placeholder="Enter the value">
+      </div>
 
         
 
-        <!-- states -->
+        <!-- crops -->
         <div class="input_container">
           <label for="name">Crop you want to grow</label>
           <select name="crop" id="crop" class="form-control">
@@ -98,11 +83,52 @@
             <option>coffee</option>
           </select>
         </div>
+        
 
         <div class="input_container">
-          <button type="submit" class="btn">Predict</button>
+          <button type="submit" class="btn">Recommend</button>
         </div>
       </form>
     </section>
+
+    <script>
+
+const fertiliserform = document.querySelector('#fertiliser-form');
+// fertilizer form submit
+fertiliserform.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(fertiliserform)
+    
+    // Convert formData to JSON
+  const data = {};
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+  
+  const json = JSON.stringify(data);
+    console.log(json);
+
+//   // Send JSON to backend
+
+//   fetch('/api/predict', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: json
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data); // handle response from backend
+//   })
+//   .catch(error => {
+//     console.error(error); // handle error
+//   });
+
+    // window.location.href = 'cropresult.html';
+});
+
+    </script>
   </body>
 </html>

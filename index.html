@@ -33,7 +33,17 @@
             <li><a href="/frontend/fertiliser.html">Fertiliser</a></li>
             <li><a href="/frontend/disease.html">Disease</a></li>
             <li><a href="/frontend/blog.html">Blog</a></li>
-            
+            <li><button type="toggle" class="toggle-btn"><i class="fa-solid fa-moon"></i></button></li>
+            <li>
+                <!-- applying google translation to whole page -->
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </li>
         </ul>
 
     </nav>
@@ -60,7 +70,48 @@
 
 
     <!-- news-carousel -->
+    <section class="carousel">
+        <h1 class="section_title">News</h1>
 
+        <div class="wrapper">
+            <section id="section1">
+              <a href="#section1" class="arrow__btn">‹</a>
+              <div class="item">
+              <img src="./assets/news.webp" alt="Describe Image">
+            </div>
+            <div class="item">
+                <img src="./assets/news.webp" alt="Describe Image">
+              </div>
+              <div class="item">
+                <img src="./assets/news.webp" alt="Describe Image">
+              </div>
+              <div class="item">
+                <img src="./assets/news.webp" alt="Describe Image">
+              </div>
+              
+              <a href="#section2" class="arrow__btn">›</a>
+            </section>
+            <section id="#section2">
+              <a href="#section1" class="arrow__btn">‹</a>
+                <div class="item">
+                    <img src="./assets/news.webp" alt="Describe Image">
+                    </div>
+                    <div class="item">
+                        <img src="./assets/news.webp" alt="Describe Image">
+                      </div>
+                      <div class="item">
+                        <img src="./assets/news.webp" alt="Describe Image">
+                      </div>
+                      <div class="item">
+                        <img src="./assets/news.webp" alt="Describe Image">
+                      </div>
+              <a href="#section2" class="arrow__btn">›</a>
+            </section>
+            
+          </div>
+    </section>
+    
+    
     
     
     <!-- services section -->

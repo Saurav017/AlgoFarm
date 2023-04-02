@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+
+    <title>AlgoFarm</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div>
+        <h1 class="logo">Algo<span>Farm</span></h1>
+      </div>
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="/frontend/crop.html">Crop</a></li>
+        <li><a href="/frontend/fertiliser.html">Fertiliser</a></li>
+        <li><a href="/frontend/disease.html">Disease</a></li>
+        <li><a href="/frontend/blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <!-- form section -->
+    <section class="container">
+      <form class="form_container" id="disease-form">
+        <!-- upload an crop img  -->
+        <div class="input_container upload">
+          <label for="name">Upload the Image of the crop</label>
+          <input type="file" accept="image/*" onchange="getImg(this.value);"/>
+        </div>
+        <div class="input_container" id="imageData"></div>
+        <div class="input_container">
+          <button type="submit" class="btn">Predict</button>
+        </div>
+      </form>
+    </section>
+
+    <script>
+
+      // getting img data
+      function getImg(imgImage) {
+        const imageData = document.querySelector("#imageData");
+        imageData.innerHTML = `<img src="${imgImage}" alt="image" />`;
+      }
+
+      // image upload and prediction
+      const form = document.querySelector("#disease-form");
+      const imageData = document.querySelector("#imageData");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // get the image file from the input
+        const fileInput = document.querySelector('input[type="file"]');
+        const file = fileInput.files[0];
+
+        console.log(file);
+        // create a new form data object and append the file to it
+        const formData = new FormData();
+        formData.append("image", file);
+
+        console.log(formData);
+
+        // // send the form data to the backend using a POST request
+        // const response = await fetch('/api/predict', {
+        //   method: 'POST',
+        //   body: formData
+        // });
+
+        // // handle the response from the backend
+        // const data = await response.json();
+        // console.log(data);
+      });
+    </script>
+  </body>
+</html>
