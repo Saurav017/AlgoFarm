@@ -220,3 +220,5 @@ for(var i = 0; i < optionsList.length; i++){
 
 });
 
+
+// carousel script
