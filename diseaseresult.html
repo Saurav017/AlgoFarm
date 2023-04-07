@@ -84,56 +84,37 @@
   <script>
 
 
-    // create an object to get the data from the local storage
-    const cropData = JSON.parse(localStorage.getItem('cropdata'));
+    // get the data from local storage
+    const disData = localStorage.getItem('disdata');
 
+    console.log(disData);
     // get the result section
     const result = document.querySelector('.result');
 
 
-    if (cropData.district == "Indore")  {
-         // get the result text
+    if (disData == "assets/s2.jpg")
+    {
+    // get the result text
     result.innerHTML = `
-    <h1> You should grow mothbeans in your farm.</h1>
-    `;
-
-    } 
-
-    else if (cropData.district == "Amritsar") {
-        // get the result text
-        result.innerHTML = `
-    <h1> You should grow coconut in your farm.</h1>
+    <h1> Crop: Tomato </h1>
+    <h1>Disease: Late Blight   </h1>
+<p style="width:70%">Late blight is a potentially devastating disease of tomato, infecting leaves, stems and fruits of plants. The disease spreads quickly in fields and can result in total crop failure if untreated.</p>
     `;
     }
 
-
-    else if (cropData.district == "Chakrata") {
-        // get the result text
+    else if (disData == "assets/s3.jpg")
+    {
         result.innerHTML = `
-    <h1> You should grow coconut in your farm.</h1>
+    <h1> Crop: Grape </h1>
+    <h1>Disease: Black Measles</h1>
+<p  style="width:70%>Black Measles is caused by a complex of fungi that includes several species of Phaeoacremonium, primarily by P. aleophilum (currently known by the name of its sexual stage, Togninia minima), and by Phaeomoniella chlamydospora.</p>
     `;
     }
 
-
-    else if (cropData.district == "Bhagalpur") {
-        // get the result text
-        result.innerHTML = `
-    <h1> You should grow kidneybeans in your farm.</h1>
-    `;
-    }
-
-    else {
-        // get the result text
-        result.innerHTML = `
-    <h1> You should grow wheat in your farm.</h1>
-    `;
-    }
-
-   
     // if click on home btn then remove the data from local storage
     const homeBtn = document.querySelector('.home_btn');
     homeBtn.addEventListener('click', () => {
-        localStorage.removeItem('cropdata');
+        localStorage.removeItem('disdata');
     });
 
 

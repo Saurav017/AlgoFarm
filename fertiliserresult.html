@@ -85,55 +85,38 @@
 
 
     // create an object to get the data from the local storage
-    const cropData = JSON.parse(localStorage.getItem('cropdata'));
+    const fData = JSON.parse(localStorage.getItem('fdata'));
 
     // get the result section
     const result = document.querySelector('.result');
 
-
-    if (cropData.district == "Indore")  {
+    
+    if (fData.crop == "rice" || fData.crop == "maize")  {
          // get the result text
     result.innerHTML = `
-    <h1> You should grow mothbeans in your farm.</h1>
+    <h1> Add composted manure to the soil. Use NPK fertilizers with high N value.</h1>
     `;
-
     } 
 
-    else if (cropData.district == "Amritsar") {
+    else if (fData.crop == "kidney beans" || fData.crop == "blackgram")  {
+         // get the result text
+    result.innerHTML = `
+    <h1> Apply only commercial fertilizer that has a '0' in the final number field. Commercial fertilizers use a three number system for measuring levels of nitrogen, phosphorous and potassium. The last number stands for potassium.</h1>
+    `;
+    } 
+
+    
+    else{
         // get the result text
         result.innerHTML = `
-    <h1> You should grow coconut in your farm.</h1>
+    <h1> Use NPK fertilizers with low K levels and organic fertilizers since they have low NPK values.</h1>
     `;
     }
 
-
-    else if (cropData.district == "Chakrata") {
-        // get the result text
-        result.innerHTML = `
-    <h1> You should grow coconut in your farm.</h1>
-    `;
-    }
-
-
-    else if (cropData.district == "Bhagalpur") {
-        // get the result text
-        result.innerHTML = `
-    <h1> You should grow kidneybeans in your farm.</h1>
-    `;
-    }
-
-    else {
-        // get the result text
-        result.innerHTML = `
-    <h1> You should grow wheat in your farm.</h1>
-    `;
-    }
-
-   
     // if click on home btn then remove the data from local storage
     const homeBtn = document.querySelector('.home_btn');
     homeBtn.addEventListener('click', () => {
-        localStorage.removeItem('cropdata');
+        localStorage.removeItem('fdata');
     });
 
 
